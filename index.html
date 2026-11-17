@@ -5,118 +5,159 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Absensi Guru Digital</title>
 <style>
-:root{--bg:#F1F5F3;--sf:#fff;--ink:#14292A;--mut:#5C7071;--ln:#D9E3E0;--bd:#1E3B35;--ch:#EBC94B;--ok:#18794E;--okb:#DDF3E8;--no:#B3261E;--nob:#FBE4E1;--wn:#8A5A00;--wnb:#FFF0C7;--fn:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
-@media(prefers-color-scheme:dark){:root{--bg:#0F1A18;--sf:#16251F;--ink:#E6EFEC;--mut:#93A9A4;--ln:#27403A;--okb:#12382A;--nob:#43201D;--wnb:#40330F;--ok:#5FD39A;--no:#FF8A80;--wn:#EBC94B}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--fn);padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
-button,input,select{font:inherit}:focus-visible{outline:3px solid var(--ch);outline-offset:2px}
-header{background:var(--bd);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px}header b{font-size:16px}header button{width:auto;padding:6px 12px;background:transparent;border:1px solid #6b8c83;color:#fff;border-radius:8px;cursor:pointer}
-main{max-width:480px;margin:0 auto;padding:16px}main.w{max-width:1000px}
-h2{margin:0 0 4px;font-size:22px}.sub{color:var(--mut);margin:0 0 14px}
-.card{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:14px;margin-bottom:12px;min-width:0}.card h3{margin:0 0 8px;font-size:16px}
+:root{--bg:#EEF1ED;--sf:#fff;--ink:#14292A;--mut:#5C7071;--ln:#DDE4E0;--sb:#0F2E28;--sb2:#1B4A40;--pr:#1B6B5F;--or:#D58A1A;--bl:#2F6DB5;--pu:#7B4FB5;--gr:#8A9893;--ok:#18794E;--okb:#DDF3E8;--no:#B3261E;--nob:#FBE4E1;--wn:#8A5A00;--wnb:#FFF0C7;--fn:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#0C1614;--sf:#14231F;--ink:#E6EFEC;--mut:#93A9A4;--ln:#25403A;--sb:#081D19;--pr:#3FB59F;--gr:#4E5F5A;--okb:#12382A;--nob:#43201D;--wnb:#40330F;--ok:#5FD39A;--no:#FF8A80;--wn:#EBC94B}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--fn);padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+button,input,select{font:inherit}:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.app{display:grid;grid-template-columns:248px 1fr;min-height:100vh}
+aside{background:var(--sb);color:#E6EFEC;padding:18px 12px;display:flex;flex-direction:column;gap:4px}
+.br{display:flex;gap:10px;align-items:center;margin:0 6px 18px}.lg{width:38px;height:38px;border-radius:9px;background:#E6EFEC;color:var(--sb);display:grid;place-items:center;font-weight:800}.br b{display:block;font-size:15px}.br small{color:#9DB8B0}
+aside a{padding:10px 12px;border-radius:8px;cursor:pointer;font-weight:600;color:#D5E3DE}aside a:hover{background:var(--sb2)}aside a.on{background:var(--sb2);color:#fff}aside a i{font-style:normal;font-size:11px;color:#9DB8B0;margin-left:6px}
+.ver{margin:auto 6px 0;font-size:12px;color:#9DB8B0}
+.top{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:var(--sf);border-bottom:1px solid var(--ln);gap:10px}.top h1{margin:0;font-size:20px}.top small{color:var(--mut)}
+.us{display:flex;align-items:center;gap:10px}.av{width:38px;height:38px;border-radius:50%;background:var(--pr);color:#fff;display:grid;place-items:center;font-weight:700}.us small{display:block;line-height:1.2}
+.bt{border:1px solid var(--ln);background:var(--sf);color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer}
+main{padding:20px 24px;max-width:1200px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:18px;margin-bottom:16px;min-width:0}.card h3{margin:0;font-size:16px}.card p.s{margin:0 0 12px;color:var(--mut);font-size:13px}
+.hero{display:grid;grid-template-columns:230px 1fr;gap:24px;align-items:center}.big{font-size:52px;font-weight:800;color:var(--pr);line-height:1}.big span{font-size:24px}
+.seg{display:flex;height:20px;border-radius:99px;overflow:hidden;background:var(--gr);margin-bottom:14px}.seg i{display:block}
+.bx{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}.bx div{border:1px solid var(--ln);border-left:3px solid var(--c);border-radius:8px;padding:10px 12px}.bx b{display:block;font-size:22px}.bx span{color:var(--mut);font-size:13px}
+.two{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}.two2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.em{text-align:center;color:var(--mut);padding:50px 10px}.em b{display:block;color:var(--ink)}
+.pj{display:grid;grid-template-columns:90px 1fr 44px;gap:10px;align-items:center;margin:9px 0}.tr{height:10px;border-radius:99px;background:var(--ln);overflow:hidden}.tr i{display:block;height:100%;background:var(--pr)}
+.ak{padding:9px 0;border-bottom:1px solid var(--ln)}.ak:last-child{border:0}.ak small{color:var(--mut);display:block}
 label{display:block;font-size:13px;color:var(--mut);margin:10px 0 3px}input,select{width:100%;padding:10px;border:1px solid var(--ln);border-radius:8px;background:var(--bg);color:var(--ink)}
-.btn{display:block;width:100%;border:0;border-radius:10px;padding:13px;font-weight:700;cursor:pointer;background:var(--bd);color:#fff;margin-top:10px}.btn:disabled{opacity:.45;cursor:not-allowed}.btn.ch{background:var(--ch);color:#1b2a1f}.btn.ln{background:transparent;color:var(--ink);border:1px solid var(--ln)}
-.loc{border-radius:10px;padding:12px;margin-bottom:12px}.ok{background:var(--okb);color:var(--ok)}.no{background:var(--nob);color:var(--no)}.wn{background:var(--wnb);color:var(--wn)}
+.btn{display:block;width:100%;border:0;border-radius:10px;padding:12px;font-weight:700;cursor:pointer;background:var(--sb);color:#fff;margin-top:10px}.btn:disabled{opacity:.45;cursor:not-allowed}.btn.ch{background:#EBC94B;color:#1b2a1f}.btn.ln{background:transparent;color:var(--ink);border:1px solid var(--ln)}
+.loc{border-radius:10px;padding:12px;margin:10px 0}.ok{background:var(--okb);color:var(--ok)}.no{background:var(--nob);color:var(--no)}.wn{background:var(--wnb);color:var(--wn)}
 .tg{padding:2px 9px;border-radius:99px;font-size:12px;font-weight:600;display:inline-block}
-.cam{position:relative;display:none}.cam.on{display:block}.cam video{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;background:#0c1614;transform:scaleX(-1)}.cam:after{content:"";position:absolute;inset:14% 18%;border:3px dashed var(--ch);border-radius:50%;pointer-events:none}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--ln);white-space:nowrap}th{color:var(--mut)}
-.hide{display:none}
+.cam{position:relative;display:none}.cam.on{display:block}.cam video{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;background:#0c1614;transform:scaleX(-1)}.cam:after{content:"";position:absolute;inset:14% 18%;border:3px dashed #EBC94B;border-radius:50%;pointer-events:none}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tw{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--ln);white-space:nowrap}th{color:var(--mut)}
+.nar{max-width:520px}.hide{display:none!important}
+#vLogin{max-width:380px;margin:8vh auto;padding:0 16px}
+@media(max-width:820px){.app{grid-template-columns:1fr}aside{flex-direction:row;overflow-x:auto;padding:8px}.br,.ver{display:none}aside a{white-space:nowrap}.hero,.two,.two2{grid-template-columns:1fr}main{padding:14px}.top{padding:12px 14px}}
 </style>
 </head>
 <body>
-<header><b>Absensi Guru Digital</b><button id="out" class="hide">Keluar</button></header>
+<div id="vLogin"><div class="card"><h2 style="margin:0 0 4px">Absensi Guru Digital</h2><p class="s" style="color:var(--mut)">Masuk dengan akun dari admin sekolah.</p>
+<label for="u">Username</label><input id="u" autocomplete="username"><label for="p">Password</label><input id="p" type="password" autocomplete="current-password">
+<button class="btn" id="bl">Masuk</button><div id="lmsg" class="loc no hide"></div></div></div>
 
-<main id="vLogin">
-<h2>Masuk</h2><p class="sub">Gunakan akun yang diberikan admin sekolah.</p>
-<div class="card"><label for="u">Username</label><input id="u" autocomplete="username"><label for="p">Password</label><input id="p" type="password" autocomplete="current-password">
-<button class="btn" id="bl">Masuk</button></div><div id="lmsg" class="loc no hide"></div>
-</main>
+<div class="app hide" id="app">
+<aside><div class="br"><div class="lg">AG</div><div><b>Absensi Guru</b><small id="sch">Nama Sekolah</small></div></div><div id="nav" style="display:contents"></div><div class="ver">Versi 0.4 • Tahap 3</div></aside>
+<div>
+<div class="top"><div><h1 id="ttl">Dashboard</h1><small id="dt"></small></div><div class="us"><button class="bt" id="rf">Muat ulang</button><div class="av" id="av">A</div><div><b id="un"></b><small id="ur" style="color:var(--mut)"></small></div><button class="bt" id="out">Keluar</button></div></div>
+<main>
 
-<main id="vGuru" class="hide">
-<h2>Absensi</h2><p class="sub" id="clk"></p>
-<div id="lb" class="loc wn"><b>Mencari lokasi…</b></div>
-<div class="cam" id="cam"><video id="vid" playsinline muted></video></div>
-<button class="btn ln" id="bloc">Periksa lokasi ulang</button>
-<button class="btn ch" id="bcam" disabled>Buka kamera selfie</button>
-<div class="g2"><button class="btn" id="bin" disabled>Check-in</button><button class="btn" id="bout" disabled>Check-out</button></div>
-<div id="res" class="loc hide" style="margin-top:12px"></div>
-<div class="card" style="margin-top:12px"><h3>Riwayat terbaru</h3><div class="tw"><table id="rw"></table></div></div>
-</main>
+<section id="v-dash" class="hide">
+<div class="card hero"><div><small style="color:var(--mut)">Kehadiran hari ini</small><div class="big"><span id="pct">0,0</span><span>%</span></div><small id="pctsub" style="color:var(--mut)"></small></div>
+<div><div class="seg" id="seg"></div><div class="bx" id="bx"></div></div></div>
+<div class="two"><div class="card"><h3>Kehadiran harian</h3><p class="s">7 hari terakhir, dalam persen dari seluruh guru dan tendik</p><div id="ch"></div></div>
+<div class="card"><h3>Tren bulanan</h3><p class="s">Persentase masuk per bulan</p><div class="em"><b>Belum ada data bulanan</b>Tren tampil setelah modul laporan (Tahap 10) selesai.</div></div></div>
+<div class="two2"><div class="card"><h3>Kehadiran per jabatan hari ini</h3><p class="s">Garis oranye: di bawah 90%</p><div id="pj"></div></div>
+<div class="card"><h3>Aktivitas absensi terbaru</h3><p class="s">Hanya absensi yang berhasil</p><div id="ak"></div></div></div>
+</section>
 
-<main id="vAdmin" class="hide w">
-<h2>Monitoring hari ini</h2><p class="sub">Absensi tercatat pada tanggal hari ini (waktu server).</p>
-<div class="card"><div class="tw"><table id="mon"></table></div><button class="btn ln" id="bref" style="width:auto">Muat ulang</button></div>
-<div id="adm">
-<div class="card"><h3>Pengaturan lokasi dan jam</h3>
+<section id="v-hadir" class="hide"><div class="card"><h3>Absensi hari ini</h3><p class="s">Termasuk yang ditolak, lengkap dengan jarak dan status lokasi.</p><div class="tw"><table id="mon"></table></div></div></section>
+
+<section id="v-master" class="hide nar"><div class="card"><h3>Tambah guru atau tenaga kependidikan</h3>
+<div class="g2"><div><label for="g_nama">Nama lengkap</label><input id="g_nama"></div><div><label for="g_nip">NIP/NUPTK</label><input id="g_nip"></div>
+<div><label for="g_jabatan">Jabatan</label><input id="g_jabatan"></div><div><label for="g_role">Peran</label><select id="g_role"><option>GURU</option><option>TENDIK</option><option>KEPSEK</option><option>OPERATOR</option><option>ADMIN</option></select></div>
+<div><label for="g_username">Username</label><input id="g_username"></div><div><label for="g_password">Password (min. 8)</label><input id="g_password" type="password"></div></div>
+<button class="btn" id="badd">Simpan akun</button></div></section>
+
+<section id="v-set" class="hide nar"><div class="card"><h3>Lokasi sekolah dan jam kerja</h3>
 <div class="g2"><div><label for="c_lat">Latitude</label><input id="c_lat"></div><div><label for="c_lng">Longitude</label><input id="c_lng"></div>
 <div><label for="c_radius">Radius (m)</label><input id="c_radius" type="number"></div><div><label for="c_akurasi_max">Akurasi GPS maks (m)</label><input id="c_akurasi_max" type="number"></div>
 <div><label for="c_jam_masuk">Jam masuk</label><input id="c_jam_masuk" placeholder="07:00"></div><div><label for="c_jam_pulang">Jam pulang</label><input id="c_jam_pulang" placeholder="16:00"></div></div>
 <label for="c_toleransi_menit">Toleransi terlambat (menit)</label><input id="c_toleransi_menit" type="number">
-<button class="btn ch" id="bhere">Pakai lokasi saya sebagai titik sekolah</button><button class="btn" id="bsave">Simpan pengaturan</button></div>
-<div class="card"><h3>Tambah guru atau tendik</h3>
-<div class="g2"><div><label for="g_nama">Nama lengkap</label><input id="g_nama"></div><div><label for="g_nip">NIP/NUPTK</label><input id="g_nip"></div>
-<div><label for="g_jabatan">Jabatan</label><input id="g_jabatan"></div><div><label for="g_role">Peran</label><select id="g_role"><option>GURU</option><option>TENDIK</option><option>KEPSEK</option><option>OPERATOR</option><option>ADMIN</option></select></div>
-<div><label for="g_username">Username</label><input id="g_username"></div><div><label for="g_password">Password (min. 8)</label><input id="g_password" type="password"></div></div>
-<button class="btn" id="badd">Simpan akun</button></div>
-</div>
+<button class="btn ch" id="bhere">Pakai lokasi saya sebagai titik sekolah</button><button class="btn" id="bsave">Simpan pengaturan</button></div></section>
+
+<section id="v-soon" class="hide"><div class="card"><div class="em"><b>Segera hadir</b>Modul ini dibangun pada tahap berikutnya.</div></div></section>
+
+<section id="v-absen" class="hide nar">
+<div class="card"><p class="s" id="clk"></p><div id="lb" class="loc wn"><b>Mencari lokasi…</b></div>
+<div class="cam" id="cam"><video id="vid" playsinline muted></video></div>
+<button class="btn ln" id="bloc">Periksa lokasi ulang</button><button class="btn ch" id="bcam" disabled>Buka kamera selfie</button>
+<div class="g2"><button class="btn" id="bin" disabled>Check-in</button><button class="btn" id="bout" disabled>Check-out</button></div></div>
+<div class="card"><h3>Riwayat terbaru</h3><div class="tw"><table id="rw"></table></div></div></section>
+
 <div id="amsg" class="loc hide"></div>
-</main>
+</main></div></div>
 
 <script>
 const API='https://script.google.com/macros/s/AKfycbyAULp0SQ6GXuKExfL7KIVy2MHMDovus3NI85jvdSUKLl3T6yAxz4RMiEY_qKQRKpJi/exec';
 const $=i=>document.getElementById(i);
-let S=null,pos=null,stream=null,locOK=false,cfgLoc=null;
+let S=null,pos=null,stream=null,cur=null;
 try{S=JSON.parse(sessionStorage.getItem('s')||'null')}catch(e){}
 async function api(o){if(S)o.token=S.token;try{const r=await fetch(API,{method:'POST',body:JSON.stringify(o)});return await r.json()}catch(e){return{ok:false,error:'Tidak dapat terhubung ke server. Periksa koneksi internet.'}}}
 function esc(t){const d=document.createElement('div');d.textContent=t==null?'':t;return d.innerHTML}
 function msg(el,cls,t){el.className='loc '+cls;el.textContent=t}
-function show(v){['vLogin','vGuru','vAdmin'].forEach(x=>$(x).classList.toggle('hide',x!==v));$('out').classList.toggle('hide',v==='vLogin')}
+const NAV={guru:[['absen','Absensi']],admin:[['dash','Dashboard'],['master','Data master'],['hadir','Kehadiran'],['soon','Izin dan sakit'],['soon','Laporan'],['set','Pengaturan']],kepsek:[['dash','Dashboard'],['hadir','Kehadiran'],['soon','Laporan']],op:[['soon','Beranda']]};
+function grp(){const r=S.role;return r==='GURU'||r==='TENDIK'?'guru':r==='ADMIN'||r==='SUPER_ADMIN'?'admin':r==='KEPSEK'?'kepsek':'op'}
 function route(){
-  if(!S)return show('vLogin');
-  if(S.role==='GURU'||S.role==='TENDIK'){show('vGuru');cek();riwayat()}
-  else{show('vAdmin');$('adm').classList.toggle('hide',!(S.role==='ADMIN'||S.role==='SUPER_ADMIN'));if(S.role==='OPERATOR')return msg($('amsg'),'wn','Akun operator belum memiliki halaman khusus.');monitor();muatCfg()}
+  $('vLogin').classList.toggle('hide',!!S);$('app').classList.toggle('hide',!S);if(!S)return;
+  $('un').textContent=S.nama||S.role;$('ur').textContent=S.role.replace('_',' ');$('av').textContent=(S.nama||S.role)[0].toUpperCase();
+  $('dt').textContent=new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  const n=NAV[grp()];$('nav').innerHTML='';
+  n.forEach((x,i)=>{const a=document.createElement('a');a.textContent=x[1];if(x[1]==='Laporan'||x[1]==='Izin dan sakit'){a.innerHTML+='<i>segera</i>'}a.onclick=()=>go(x[0],x[1],a);$('nav').appendChild(a);if(i===0)go(x[0],x[1],a)});
 }
+function go(v,t,a){stopCam();cur=v;document.querySelectorAll('section').forEach(s=>s.classList.add('hide'));$('v-'+v).classList.remove('hide');$('ttl').textContent=t;
+  document.querySelectorAll('#nav a').forEach(x=>x.classList.toggle('on',x===a));$('amsg').className='loc hide';load()}
+function load(){if(cur==='dash')dash();else if(cur==='hadir')monitor();else if(cur==='set')muatCfg();else if(cur==='absen'){cek();riwayat()}}
+$('rf').onclick=load;
 $('bl').onclick=async()=>{$('bl').disabled=true;const r=await api({aksi:'login',username:$('u').value.trim(),password:$('p').value});$('bl').disabled=false;
   if(!r.ok){const m=$('lmsg');m.classList.remove('hide');m.textContent=r.error;return}
-  S=r.data;sessionStorage.setItem('s',JSON.stringify(S));$('p').value='';route()};
+  S=r.data;S.nama=$('u').value.trim();sessionStorage.setItem('s',JSON.stringify(S));$('p').value='';route()};
 $('p').onkeydown=e=>{if(e.key==='Enter')$('bl').click()};
-$('out').onclick=()=>{stopCam();sessionStorage.removeItem('s');S=null;show('vLogin')};
-setInterval(()=>{$('clk').textContent=new Date().toLocaleString('id-ID',{dateStyle:'full',timeStyle:'medium'})},1000);
+$('out').onclick=()=>{stopCam();sessionStorage.removeItem('s');S=null;route()};
+setInterval(()=>{if($('clk'))$('clk').textContent=new Date().toLocaleString('id-ID',{dateStyle:'full',timeStyle:'medium'})},1000);
 
-function cek(){
-  locOK=false;$('bcam').disabled=true;$('bin').disabled=$('bout').disabled=true;
-  if(!navigator.geolocation)return msg($('lb'),'no','Browser tidak mendukung GPS.');
-  msg($('lb'),'wn','Mengambil lokasi…');
-  navigator.geolocation.getCurrentPosition(p=>{pos=p.coords;locOK=true;$('bcam').disabled=false;
-    msg($('lb'),'ok','GPS aktif • akurasi '+Math.round(pos.accuracy)+' m. Jarak ke sekolah dihitung server saat Anda absen.')},
-    e=>msg($('lb'),'no',e.code===1?'Izin lokasi ditolak. Izinkan lokasi untuk situs ini lalu periksa ulang.':'GPS tidak aktif atau lokasi tidak ditemukan. Aktifkan GPS lalu periksa ulang.'),
-    {enableHighAccuracy:true,timeout:15000,maximumAge:0});
+async function dash(){
+  const r=await api({aksi:'dashboard'});if(!r.ok){if(/sesi/i.test(r.error))return $('out').click();return msg($('amsg'),'no',r.error)}
+  const d=r.data,T=d.total,tep=d.hadir-d.terlambat,bel=Math.max(T-d.hadir-d.izin-d.sakit,0),pc=T?d.hadir/T*100:0;
+  $('pct').textContent=pc.toFixed(1).replace('.',',');$('pctsub').textContent=d.hadir+' dari '+T+' guru sudah masuk';
+  const bx=[['Hadir',tep,'var(--pr)'],['Terlambat',d.terlambat,'var(--or)'],['Izin',d.izin,'var(--bl)'],['Sakit',d.sakit,'var(--pu)'],['Belum absen',bel,'var(--gr)'],['Sudah pulang',d.pulang,'var(--pr)']];
+  $('bx').innerHTML=bx.map(x=>`<div style="--c:${x[2]}"><b>${x[1]}</b><span>${x[0]}</span></div>`).join('');
+  $('seg').innerHTML=T?bx.slice(0,5).map(x=>`<i style="width:${x[1]/T*100}%;background:${x[2]}"></i>`).join(''):'';
+  let s='<svg viewBox="0 0 700 260" width="100%" role="img" aria-label="Grafik kehadiran 7 hari terakhir">';
+  [0,25,50,75,100].forEach(v=>{const y=220-v*2;s+=`<line x1="40" x2="690" y1="${y}" y2="${y}" stroke="var(--ln)"/><text x="32" y="${y+4}" text-anchor="end" font-size="12" fill="var(--mut)">${v}</text>`});
+  d.seri.forEach((p,i)=>{const v=T?p.hadir/T*100:0,x=60+i*90,h=v*2;s+=`<rect x="${x}" y="${220-h}" width="44" height="${h}" rx="4" fill="var(--pr)"/><text x="${x+22}" y="244" text-anchor="middle" font-size="12" fill="var(--mut)">${p.t.slice(8)}</text>`});
+  $('ch').innerHTML=s+'</svg>';
+  $('pj').innerHTML=d.jabatan.length?d.jabatan.map(j=>{const v=j.total?Math.round(j.hadir/j.total*100):0;return`<div class="pj"><span>${esc(j.n)}</span><div class="tr"><i style="width:${v}%;background:${v<90?'var(--or)':'var(--pr)'}"></i></div><b>${v}%</b></div>`}).join(''):'<div class="em">Belum ada data guru.</div>';
+  $('ak').innerHTML=d.terbaru.length?d.terbaru.map(a=>`<div class="ak"><b>${esc(a.nama)}</b> ${esc(a.tipe)} ${esc(a.jam)}<small>${esc(a.t)} ${esc(a.ket)}</small></div>`).join(''):'<div class="em">Belum ada pemindaian hari ini.</div>';
 }
-$('bloc').onclick=cek;
-async function bukaCam(){try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:false});$('vid').srcObject=stream;await $('vid').play();$('cam').classList.add('on');$('bin').disabled=$('bout').disabled=false}catch(e){msg($('res'),'no','Kamera tidak dapat dibuka. Izinkan akses kamera.')}}
-function stopCam(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}$('cam').classList.remove('on')}
-$('bcam').onclick=bukaCam;
-function foto(){const v=$('vid'),k=document.createElement('canvas'),w=Math.min(640,v.videoWidth);k.width=w;k.height=Math.round(w*v.videoHeight/v.videoWidth);k.getContext('2d').drawImage(v,0,0,k.width,k.height);return k.toDataURL('image/jpeg',.7)}
-async function absen(tipe){
-  $('res').className='loc hide';$('bin').disabled=$('bout').disabled=true;
-  await new Promise(res=>navigator.geolocation.getCurrentPosition(p=>{pos=p.coords;res()},()=>res(),{enableHighAccuracy:true,timeout:15000,maximumAge:0}));
-  if(!pos||!stream){msg($('res'),'no','Lokasi atau kamera belum siap.');return}
-  const f=foto(),r=await api({aksi:'absen',tipe:tipe,lat:pos.latitude,lng:pos.longitude,acc:pos.accuracy,foto:f});
-  if(r.ok){stopCam();msg($('res'),'ok',r.data.pesan+(r.data.keterangan?' ('+r.data.keterangan+')':'')+'. Jarak '+r.data.jarak+' m dari sekolah.');riwayat()}
-  else{msg($('res'),'no',r.error);if(/sesi/i.test(r.error))$('out').click();else{$('bin').disabled=$('bout').disabled=false}}
-}
-$('bin').onclick=()=>absen('Check-in');$('bout').onclick=()=>absen('Check-out');
-async function riwayat(){const r=await api({aksi:'riwayat'});if(!r.ok)return;
-  $('rw').innerHTML='<tr><th>Tanggal</th><th>Jam</th><th>Tipe</th><th>Status</th></tr>'+r.data.slice().reverse().slice(0,15).map(x=>`<tr><td>${esc(x.tanggal)}</td><td>${esc(x.jam)}</td><td>${esc(x.tipe)}</td><td>${esc(x.status)} ${esc(x.ket)}</td></tr>`).join('')}
-
 async function monitor(){const r=await api({aksi:'monitoring'});if(!r.ok)return msg($('amsg'),'no',r.error);
-  $('mon').innerHTML='<tr><th>Nama</th><th>Tipe</th><th>Jam</th><th>Jarak</th><th>Lokasi</th><th>Status</th></tr>'+(r.data.length?r.data.map(x=>`<tr><td>${esc(x.nama)}</td><td>${esc(x.tipe)}</td><td>${esc(x.jam)}</td><td>${esc(x.jarak)}</td><td>${esc(x.lokasi)}</td><td><span class="tg ${x.status==='Berhasil'?'ok':'no'}">${esc(x.status)}</span> ${esc(x.ket)}</td></tr>`).join(''):'<tr><td colspan="6">Belum ada absensi hari ini.</td></tr>')}
-$('bref').onclick=monitor;
+  $('mon').innerHTML='<tr><th>Nama</th><th>Tipe</th><th>Jam</th><th>Jarak (m)</th><th>Lokasi</th><th>Status</th></tr>'+(r.data.length?r.data.map(x=>`<tr><td>${esc(x.nama)}</td><td>${esc(x.tipe)}</td><td>${esc(x.jam)}</td><td>${esc(x.jarak)}</td><td>${esc(x.lokasi)}</td><td><span class="tg ${x.status==='Berhasil'?'ok':'no'}">${esc(x.status)}</span> ${esc(x.ket)}</td></tr>`).join(''):'<tr><td colspan="6">Belum ada absensi hari ini.</td></tr>')}
 const CK=['lat','lng','radius','akurasi_max','jam_masuk','jam_pulang','toleransi_menit'];
-async function muatCfg(){const r=await api({aksi:'config_get'});if(r.ok)CK.forEach(k=>$('c_'+k).value=r.data[k]===undefined?'':r.data[k])}
+async function muatCfg(){const r=await api({aksi:'config_get'});if(r.ok){CK.forEach(k=>$('c_'+k).value=r.data[k]===undefined?'':r.data[k]);$('sch').textContent=r.data.nama_sekolah||'Nama Sekolah'}}
 $('bhere').onclick=()=>navigator.geolocation.getCurrentPosition(p=>{$('c_lat').value=p.coords.latitude.toFixed(6);$('c_lng').value=p.coords.longitude.toFixed(6);msg($('amsg'),'wn','Koordinat terisi. Tekan Simpan pengaturan.')},()=>msg($('amsg'),'no','Lokasi tidak dapat diambil.'),{enableHighAccuracy:true});
 $('bsave').onclick=async()=>{const n={};CK.forEach(k=>n[k]=$('c_'+k).value.trim());const r=await api({aksi:'config_set',nilai:n});msg($('amsg'),r.ok?'ok':'no',r.ok?'Pengaturan tersimpan.':r.error)};
 $('badd').onclick=async()=>{const o={aksi:'guru_tambah'};['nama','nip','jabatan','role','username','password'].forEach(k=>o[k]=$('g_'+k).value.trim());const r=await api(o);
   msg($('amsg'),r.ok?'ok':'no',r.ok?'Akun tersimpan dengan ID '+r.data.id_guru+'.':r.error);if(r.ok)['nama','nip','jabatan','username','password'].forEach(k=>$('g_'+k).value='')};
+
+function cek(){
+  $('bcam').disabled=$('bin').disabled=$('bout').disabled=true;
+  if(!navigator.geolocation)return msg($('lb'),'no','Browser tidak mendukung GPS.');
+  msg($('lb'),'wn','Mengambil lokasi…');
+  navigator.geolocation.getCurrentPosition(p=>{pos=p.coords;$('bcam').disabled=false;msg($('lb'),'ok','GPS aktif • akurasi '+Math.round(pos.accuracy)+' m. Jarak ke sekolah dihitung server saat Anda absen.')},
+    e=>msg($('lb'),'no',e.code===1?'Izin lokasi ditolak. Izinkan lokasi untuk situs ini lalu periksa ulang.':'GPS tidak aktif atau lokasi tidak ditemukan. Aktifkan GPS lalu periksa ulang.'),
+    {enableHighAccuracy:true,timeout:15000,maximumAge:0});
+}
+$('bloc').onclick=cek;
+$('bcam').onclick=async()=>{try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:false});$('vid').srcObject=stream;await $('vid').play();$('cam').classList.add('on');$('bin').disabled=$('bout').disabled=false}catch(e){msg($('amsg'),'no','Kamera tidak dapat dibuka. Izinkan akses kamera.')}};
+function stopCam(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}$('cam').classList.remove('on')}
+function foto(){const v=$('vid'),k=document.createElement('canvas'),w=Math.min(640,v.videoWidth);k.width=w;k.height=Math.round(w*v.videoHeight/v.videoWidth);k.getContext('2d').drawImage(v,0,0,k.width,k.height);return k.toDataURL('image/jpeg',.7)}
+async function absen(tipe){
+  $('amsg').className='loc hide';$('bin').disabled=$('bout').disabled=true;
+  await new Promise(res=>navigator.geolocation.getCurrentPosition(p=>{pos=p.coords;res()},()=>res(),{enableHighAccuracy:true,timeout:15000,maximumAge:0}));
+  if(!pos||!stream){msg($('amsg'),'no','Lokasi atau kamera belum siap.');return}
+  const r=await api({aksi:'absen',tipe:tipe,lat:pos.latitude,lng:pos.longitude,acc:pos.accuracy,foto:foto()});
+  if(r.ok){stopCam();msg($('amsg'),'ok',r.data.pesan+(r.data.keterangan?' ('+r.data.keterangan+')':'')+'. Jarak '+r.data.jarak+' m dari sekolah.');riwayat()}
+  else{msg($('amsg'),'no',r.error);if(/sesi/i.test(r.error))$('out').click();else $('bin').disabled=$('bout').disabled=false}
+}
+$('bin').onclick=()=>absen('Check-in');$('bout').onclick=()=>absen('Check-out');
+async function riwayat(){const r=await api({aksi:'riwayat'});if(!r.ok)return;
+  $('rw').innerHTML='<tr><th>Tanggal</th><th>Jam</th><th>Tipe</th><th>Status</th></tr>'+r.data.slice().reverse().slice(0,15).map(x=>`<tr><td>${esc(x.tanggal)}</td><td>${esc(x.jam)}</td><td>${esc(x.tipe)}</td><td>${esc(x.status)} ${esc(x.ket)}</td></tr>`).join('')}
 route();
 </script>
 </body>
